@@ -1,0 +1,26 @@
+{
+  "name": "rozgaarready",
+  "version": "1.0.0",
+  "description": "Hackathon TECHXCEL THE Devengers",
+  "homepage": "https://github.com/pritamzzziscoding/RozgaarReady#readme",
+  "bugs": {
+    "url": "https://github.com/pritamzzziscoding/RozgaarReady/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pritamzzziscoding/RozgaarReady.git"
+  },
+  "license": "ISC",
+  "author": "Pritam",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "argon2": "^0.41.1",
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  }
+}
