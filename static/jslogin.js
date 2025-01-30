@@ -28,7 +28,6 @@ form.addEventListener('submit', async (event)=>{
         console.log(sessionStorage.getItem('username'))
         window.location.href = '/rozgaarready'
     }else{
-        alert("Invalid Details!1")
+        alert(res.message )
     }
-    console.log(res)
 })
