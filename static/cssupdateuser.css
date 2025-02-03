@@ -1,0 +1,74 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    color: #444;
+    border-bottom: 2px solid #007BFF; /* Blue underline for section headers */
+    padding-bottom: 10px;
+}
+
+form {
+    background: white; /* White background for the form */
+    padding: 20px; /* Padding around the form content */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+label {
+    display: block; /* Labels on their own line */
+    margin: 10px 0 5px; /* Spacing around labels */
+    font-weight: bold; /* Bold text for labels */
+}
+
+input[type="text"], input[type="email"], input[type="url"] {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Space below inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners for inputs */
+}
+
+button {
+    background-color: #007BFF; /* Blue background for buttons */
+    color: white; /* White text for buttons */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding inside buttons */
+    border-radius: 4px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for buttons */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.education, .work-experience, .personal-project, .responsibility-section, .acheivements {
+    margin-bottom: 20px; /* Space below each section */
+    padding: 15px; /* Padding inside sections */
+    border: 1px solid #ddd; /* Light gray border around sections */
+    border-radius: 5px; /* Rounded corners for sections */
+    background-color: #f9f9f9; /* Light gray background for sections */
+}
+
+.delete-button {
+    background-color: red; /* Red background for delete buttons */
+    color: white; /* White text for delete buttons */
+    border: none; /* No border for delete buttons */
+    padding: 5px 10px; /* Padding inside delete buttons */
+    border-radius: 4px; /* Rounded corners for delete buttons */
+    cursor: pointer; /* Pointer cursor on hover for delete buttons */
+}
+
+.delete-button:hover {
+    background-color: darkred; /* Darker red on hover for delete buttons */
+}

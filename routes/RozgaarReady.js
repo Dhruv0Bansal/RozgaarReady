@@ -6,7 +6,11 @@ router.get('/', (req,res)=>{
     res.sendFile(path.join(__dirname,'../templates/home.html'))
 })
 
-router.get('/templates', (req,res)=>{
+router.get('/update-user', (req, res)=>{
+    res.sendFile(path.join(__dirname,'../templates/updateuser.html'))
+})
+
+router.get('/resume-templates', (req,res)=>{
     res.sendFile(path.join(__dirname,'../templates/templates.html'))
 })
 
@@ -14,8 +18,8 @@ router.get('/recomendation', (req,res)=>{
     res.sendFile(path.join(__dirname,'../templates/recomendation.html'))
 })
 
-router.get('/:name', (req,res)=>{
-    res.sendFile(path.join(__dirname,'../templates/userinfo.html'))
+router.get('/temp-1', (req, res)=>{
+    res.sendFile(path.join(__dirname,'../templates/resumeT1.html'))
 })
 
 module.exports = router

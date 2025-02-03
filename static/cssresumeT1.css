@@ -1,0 +1,49 @@
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+body {
+    background-color: #efefef;
+}
+
+.centering {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#contain {
+    height: 297mm;
+    width: 210mm;
+    background-color: #fff;
+    padding: 30px;
+}
+
+.lists {
+    display: flex;
+    gap: 30px;
+}
+
+.line {
+    height: 1.5px;
+    background-color: black;
+}
+
+.identity {
+    font-size: 2.5rem;
+}
+
+.contacts {
+    font-size: 1.3rem;
+}
+
+.subsections {
+    font-size: 1.5rem;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/cssupdateuser.css">
+</head>
+<body>
+    <h1>
+        update-user
+    </h1>
+    <form action="/rozgaarready/update">
+
+        <h2>----------------------------Main Details----------------------------</h2>
+        <div class="main-deatils">
+            <label for="username">username</label>
+            <input type="text" name="username" id="username" required>
+
+            <label for="id">ID</label>
+            <input type="text" name="id" id="id" required>
+
+            <label for="institute">Institute Name</label>
+            <input type="text" name="institute" id="institute" required>
+
+            <label for="course">BTECH/MTECH</label>
+            <input type="text" name="course" id="course" required>
+
+            <label for="branch">Branch</label>
+            <input type="text" name="branch" id="branch" required>
+
+            <label for="cgpa">CGPA</label>
+            <input type="text" name="cgpa" id="cgpa" required>
+
+            <label for="curr-year">Current Year</label>
+            <input type="text" name="currYear" id="currYear" required>
+
+            <label for="contact">Phone no</label>
+            <input type="text" name="contact" id="contact">
+            
+            <label for="offEmail">Institute Email</label>
+            <input type="email" name="offEmail" id="offEmail" required>
+
+            <label for="github">Github Link</label>
+            <input type="url" name="github" id="github">
+
+            <label for="linkedin">LinkedIn Link</label>
+            <input type="url" name="linkedin" id="linkedin">
+        </div>
+
+
+        <h2>----------------------------Education----------------------------</h2>
+        <div class="education">
+            <!-- Education -->
+        </div>
+        <button id="add-education">ADD education</button>
+
+        <h2>----------------------------Work Experience if any----------------------------</h2>
+        <div class="work-experience">
+            <!-- Work Experience -->
+        </div>
+        <button id="add-work-experience">Add Work Experience</button>
+        
+        <h2>----------------------------Personal Projects----------------------------</h2>
+        <div class="personal-project">
+                <!-- Personal Project -->
+        </div>
+        <button class="add-project">ADD Project</button>
+
+        <h2>----------------------------Technical skills and Intrests----------------------------</h2>
+        <div class="tech-skills">
+            <label for="languages">Languages</label>
+            <input type="text" name="languages" id="languages" class="languages">
+            
+            <label for="devTools">Developers Tools</label>
+            <input type="text" name="devTools" id="devTools" class="devTools">
+            
+            <label for="frameworks">Frameworks</label>
+            <input type="text" name="frameworks" id="frameworks" class="frameworks">
+            
+            <label for="cloud-db">Cloud/Database</label>
+            <input type="text" name="cloudDb" id="cloudDb" class="cloudDb">
+            
+            <label for="softskills">Softskills</label>
+            <input type="text" name="softskills" id="softskills" class="softskills">
+            
+            <label for="coursework">Coursework</label>
+            <input type="text" name="coursework" id="coursework" class="coursework">
+            
+            <label for="interestArea">Area of Interest</label>
+            <input type="text" name="interestArea" id="interestArea" class="interestArea">            
+        </div>
+
+        <h2>----------------------------Positions of Responsibility----------------------------</h2>
+        <div class="responsibility-section">
+            <!-- Clubs, Responsibility -->
+        </div>
+        <button class="add-responsibility">Add Position</button>
+        
+
+        <h2>----------------------------Achievements----------------------------</h2>
+        <div class="acheivements">
+            <!-- Acheivements -->
+        </div>
+        <button class="add-achievement">Add Achievement</button>
+
+        <button type="submit">Update Info</button>
+    </form>
+    <script src="/jsupdateuser.js"></script>
+</body>
+</html>
