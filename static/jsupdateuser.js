@@ -197,9 +197,8 @@ function populateForm(data) {
     const techSkills = data.techSkills;
     for (const key in techSkills) {
         const inputField = document.getElementById(key);
-        if (inputField) {
-            inputField.value = techSkills[key] || '';  // Set to '' if empty
-        }
+        inputField.value = techSkills[key];  // Set to '' if empty
+        
     }
 
     // Populate education section

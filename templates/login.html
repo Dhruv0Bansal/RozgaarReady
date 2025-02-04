@@ -8,16 +8,59 @@
 </head>
 <body>
 
-    <form action="/log" method="post">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" autocomplete="username" required>
+<div class="loading-overlay">
+      <div class="spinner"></div>
+    </div>
 
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" autocomplete="username" required>
+    <!-- Cursor Trail Elements -->
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
 
-        <button type="submit">Submit</button>
-    </form>  
-    <a href="/forget-password">FORGOT Password</a>
+    <!-- Background Circles -->
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+
+    <!-- Brand Logo -->
+    <img
+      src="/images/logo.png"
+      alt="Your Brand Logo"
+      class="brand-logo"
+    />
+
+    <div class="login-container">
+      <h1>Welcome Back!</h1>
+      <form id="loginForm" action="/log" method="post">
+        <div class="input-group">
+          <input
+            type="text"
+            id="username"
+            name="username"
+            autocomplete="username"
+            required
+          />
+          <label for="username">Username</label>
+        </div>
+        <div class="input-group" style="position: relative">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            autocomplete="current-password"
+            required
+          />
+          <label for="password">Password</label>
+          <!-- Toggle Password Button -->
+          <button type="button" class="toggle-password" id="togglePassword">
+            Show
+          </button>
+        </div>
+
+        <button type="submit">Sign In</button>
+        <a href="/forget-password" class="forgot-password">Forgot Password?</a>
+      </form>
+    </div>
     <script src="/jslogin.js"></script>
 </body>
 </html>

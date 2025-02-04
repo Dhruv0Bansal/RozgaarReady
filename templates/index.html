@@ -1,13 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/cssindex.html">
+    <title>RozgaarReady</title>
+    <link rel="stylesheet" href="..static/cssindex.css">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('/images/building_bg.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .name {
+            position: absolute;
+            top: 4px;
+            left: 15px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 10px;
+            color: #889194;
+        }
+
+        .buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+        }
+
+        .button {
+            background: none;
+            border: none;
+            color: #6c7d8c;
+            outline: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            transition: all 0.6s ease;
+        }
+
+        .button:hover {
+            opacity: 0.8;
+            color: #000;
+        }
+
+        .welcome_container {
+            margin-top: 120px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+        }
+
+        .welcome_container p {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: rgb(95, 91, 91);
+            font-size: 60px;
+            margin: 0 auto;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            border-right: 4px solid white;
+            width: 0;
+            animation: typing 4s steps(30, end) 1s forwards, blink-caret .75s step-end infinite;
+            padding-right: 4px;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+
+            0%,
+            100% {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: white;
+            }
+        }
+
+        /* Hides the welcome container & buttons when scrolling */
+        .hidden {
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+
+        /* Container for boxes */
+        .boxes {
+            width: 100%;
+            max-width: 1400px; /* Increase max-width for larger appearance */
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            display: flex; /* Use flexbox */
+            flex-direction: column; /* Align children vertically */
+            align-items: center; /* Center align children */
+        }
+
+        /* Individual box styles */
+        /* Individual box styles */
+.box {
+    width: 150%; /* Set width to 90% of the screen width */
+    max-width: none; /* Remove max-width to allow full 90% width */
+    height: 40vh; /* You can adjust the height if needed */
+    margin: 40px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px; /* Increase padding for a larger appearance */
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 0.5s ease-out;
+}
+
+
+        /* Image styling */
+        .box img {
+            width: 35%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(0.8);
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .box .content {
+            width: 60%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* When boxes become visible */
+        .box.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .box.show img {
+            transform: scale(1);
+        }
+    </style>
 </head>
+
 <body>
-    <a href="/login"><button>Login</button></a>
-    <a href="/signup"><button>Signup</button></a>
+    <div class="name">
+        <h1>RozgaarReady</h1>
+    </div>
+
+    <div class="buttons">
+        <a href="/login"><button class="button">Login</button></a>
+        <a href="/signup"><button class="button">Signup</button></a>
+        <button class="button">Connect</button>
+        <button class="button">Github</button>
+        <button class="button">About</button>
+    </div>
+
+    <div class="welcome_container">
+        <p class="welcome">Welcome to RozgaarReady</p>
+    </div>
+
+    <div class="boxes">
+        <div class="box box-left">
+            <img src="https://via.placeholder.com/400" alt="Image 1">
+            <div class="content">
+                <h3>Box 1</h3>
+                <p>This is the first box with a left image.</p>
+            </div>
+        </div>
+
+        <div class="box box-right">
+            <img src="https://via.placeholder.com/400" alt="Image 2">
+            <div class="content">
+                <h3>Box 2</h3>
+                <p>This is the second box with a right image.</p>
+            </div>
+        </div>
+
+        <div class="box box-left">
+            <img src="https://via.placeholder.com/400" alt="Image 3">
+            <div class="content">
+                <h3>Box 3</h3>
+                <p>Here's a third box with a left image.</p>
+            </div>
+        </div>
+
+        <div class="box box-right">
+            <img src="https://via.placeholder.com/400" alt="Image 4">
+            <div class="content">
+                <h3>Box 4</h3>
+                <p>Box four with a right image.</p>
+            </div>
+        </div>
+
+        <div class="box box-left">
+            <img src="https://via.placeholder.com/400" alt="Image 5">
+            <div class="content">
+                <h3>Box 5</h3>
+                <p>The fifth box comes with a left image.</p>
+            </div>
+        </div>
+
+        <div class="box box-right">
+            <img src="https://via.placeholder.com/400" alt="Image 6">
+            <div class="content">
+                <h3>Box 6</h3>
+                <p>And here comes the sixth box with a right image.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const welcomeContainer = document.querySelector('.welcome_container');
+        const buttons = document.querySelector('.buttons');
+        const boxes = document.querySelector('.boxes');
+        const boxElements = document.querySelectorAll('.box');
+
+        let hasScrolledDown = false;
+        let lastScrollTime = 0;
+
+        function handleScroll() {
+            const scrollPosition = window.scrollY;
+            const scrollHeight = document.documentElement.scrollHeight;
+            const clientHeight = document.documentElement.clientHeight;
+            const scrolledToBottom = scrollPosition + clientHeight >= scrollHeight;
+            const currentTime = new Date().getTime();
+            const timeDifference = currentTime - lastScrollTime;
+            lastScrollTime = currentTime;
+
+            if (scrollPosition > 20 && !hasScrolledDown) { // Reduced scroll limit
+                welcomeContainer.classList.add('hidden');
+                buttons.classList.add('hidden');
+
+                boxes.style.opacity = "1";
+                boxes.style.transform = "translateY(0)";
+
+                hasScrolledDown = true;
+            } else if (scrollPosition < 20 && hasScrolledDown) { // Reduced scroll limit
+                welcomeContainer.classList.remove('hidden');
+                buttons.classList.remove('hidden');
+
+                boxes.style.opacity = "0";
+                boxes.style.transform = "translateY(50px)";
+
+                boxElements.forEach(box => box.classList.remove('show'));
+
+                hasScrolledDown = false;
+            }
+
+            if (hasScrolledDown) {
+                boxElements.forEach((box, index) => {
+                    const boxTop = box.getBoundingClientRect().top;
+                    const delay = 10;  // Dynamically adjust delay based on scroll speed
+                    if (boxTop < window.innerHeight * 0.85) {
+                        setTimeout(() => {
+                            box.classList.add('show');
+                        }, index * delay);
+                    }
+                });
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+    </script>
 </body>
+
 </html>
