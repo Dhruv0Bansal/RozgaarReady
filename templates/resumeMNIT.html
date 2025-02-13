@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume Template-1</title>
+    <title>MNIT Template</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Faster+One&family=Gabarito:wght@400..900&family=Manuale:ital@0;1&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montagu+Slab:opsz,wght@16..144,100..700&family=Mountains+of+Christmas&family=Nokora:wght@100&family=Playfair+Display:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Burned&family=Unna:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn+SC&display=swap');
+
         .flex {
             display: flex;
             align-items: center;
@@ -32,7 +33,8 @@
             align-items: center;
         }
 
-        *, no-spacing {
+        *,
+        no-spacing {
             margin: 0px;
             padding: 0px;
         }
@@ -83,6 +85,12 @@
             font-style: normal;
         }
 
+        /* this is to modify */
+        .username {
+            font-size: x-large;
+            font-weight: 550;
+        }
+
         .contacts {
             font-size: 20px;
         }
@@ -93,7 +101,7 @@
             font-weight: 400;
             font-style: normal;
         }
-        
+
         .p-class {
             font-size: 20px;
             font-family: "Manuale", serif;
@@ -112,22 +120,27 @@
         .workExp,
         .subProject,
         .subposition,
-        .acheivement {
+        .acheivement,
+        .skills {
             margin-bottom: 8px;
         }
 
-        .contact-details{
+        .contact-details {
             display: flex;
             flex-direction: column;
-            justify-content:flex-end;
+            justify-content: flex-end;
             align-items: flex-end;
         }
 
-        header{
-            margin-bottom: 20px;
+        header {
+            margin-bottom: 10px;
         }
 
-        .status{
+        .head {
+            font-size: 18px;
+        }
+
+        .status {
             font-size: 3rem;
             position: absolute;
             top: 40%;
@@ -176,24 +189,28 @@
 <body>
     <button id="generatePdf">Generate PDF</button>
     <div id="contain">
-        <div class="header">
-            <!-- USER-NAME -->
-            <div class="name centering avoid-page-break">
-                <h2 class="identity username bona-nova-sc-regular" style="font-size: 3rem; font-weight: 500;">Name</h2>
+        <header class="flex">
+            <div class="info d-flex">
+                <img src="https://www.careerindia.com/img/2011/11/04-mnitph.d2011.jpg" alt="MNIT LOGO" height="110mm"
+                    width="110mm">
+                <div class="personalInfo">
+                    <h2 class="no-spacing username"></h2>
+                    <p class="no-spacing head"><span>Roll No.:</span> <span class="id"></span></p>
+                    <p class="no-spacing course head"></p>
+                    <p class="no-spacing branch head"></p>
+                    <p class="no-spacing head">Malaviya National Institute Of Technology, Jaipur</p>
+                </div>
             </div>
-
-            <!-- CONTACTS -->
-            <div class="centering avoid-page-break">
-                <ul class="lists">
-                    <li class="contacts flex contact manuale">Phone No</li>
-                    <li class="contacts flex offEmail manuale"><i class='bx bx-envelope'></i>email@gmail.com</li>
-                    <li class="contacts flex manuale"><a class="flex linkedin" href=""><i
-                                class='bx bxl-linkedin-square'></i>LinkedIn</a></li>
-                    <li class="contacts flex manuale"><a class="flex github" href=""><i
-                                class='bx bxl-github'></i>Github</a></li>
-                </ul>
+            <div class="contact-details">
+                <p class="no-spacing contact head"></p>
+                <p class="no-spacing head email flex"></p>
+                <p class="no-spacing offEmail head flex"></p>
+                <p class="no-spacing head"><a class="flex linkedin" href=""><i
+                            class='bx bxl-linkedin-square'></i>LinkedIn</a></p>
+                <p class="no-spacing head flex"><a class="flex github" href=""><i class='bx bxl-github'></i>Github</a>
+                </p>
             </div>
-        </div>
+        </header>
 
         <!-- //Education -->
         <h2 class="subsections edu-head bona-nova-sc-regular">Education</h2>
@@ -216,13 +233,13 @@
         <h2 class="subsections bona-nova-sc-regular">Technical Skills and Interests</h2>
         <div class="line"></div>
         <div class="skills avoid-page-break">
-            <span class="playfair-display-bold">• Languages : </span><span class="languages">C++</span><br>
-            <span class="playfair-display-bold">• Developer Tools : </span><span class="devTools">C++</span><br>
-            <span class="playfair-display-bold">• Frameworks : </span><span class="frameworks">C++</span><br>
-            <span class="playfair-display-bold">• Cloud/Databases : </span> <span class="cloudDb">C++</span><br>
-            <span class="playfair-display-bold">• Soft Skills : </span><span class="softskills">C++</span><br>
-            <span class="playfair-display-bold">• Coursework : </span><span class="coursework">C++</span><br>
-            <span class="playfair-display-bold">• Areas of Interest : </span><span class="interestArea">C++</span><br>
+            <span class="playfair-display-bold">• Languages: </span><span class="languages">C++</span><br>
+            <span class="playfair-display-bold">• Developer Tools: </span><span class="devTools">C++</span><br>
+            <span class="playfair-display-bold">• Frameworks: </span><span class="frameworks">C++</span><br>
+            <span class="playfair-display-bold">• Cloud/Databases: </span> <span class="cloudDb"> C++</span><br>
+            <span class="playfair-display-bold">• Soft Skills: </span><span class="softskills">C++</span><br>
+            <span class="playfair-display-bold">• Coursework: </span><span class="coursework">C++</span><br>
+            <span class="playfair-display-bold">• Areas of Interest: </span><span class="interestArea">C++</span><br>
         </div>
         <h2 class="subsections position-head bona-nova-sc-regular">Positions Of Responsibility</h2>
         <div class="line position-head"></div>
@@ -237,6 +254,7 @@
             <h1 class="water-mark">NOT VERIFIED</h1>
         </div>
     </div>
+
     <script src=" /jsresumeT1.js">
     </script>
 </body>

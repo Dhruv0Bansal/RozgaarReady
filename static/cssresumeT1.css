@@ -1,13 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Faster+One&family=Gabarito:wght@400..900&family=Manuale:ital@0;1&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montagu+Slab:opsz,wght@16..144,100..700&family=Mountains+of+Christmas&family=Nokora:wght@100&family=Playfair+Display:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Burned&family=Unna:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn+SC&display=swap');
+
+
 .flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+.d-flex{
+    display: flex;
+    align-items: center;
+}
 
-.flex-align-items{
+.flex-align-items {
     gap: 20px;
     display: flex;
-    align-items:start;
+    align-items: start;
     justify-content: space-between;
 }
 
@@ -35,6 +42,7 @@ body {
     width: 210mm;
     background-color: #fff;
     padding: 50px;
+    padding-top: 25px;
 }
 
 .lists {
@@ -45,18 +53,7 @@ body {
 .line {
     height: 1.5px;
     background-color: black;
-}
-
-.identity {
-    font-size: 2.5rem;
-}
-
-.contacts {
-    font-size: 1.2rem;
-}
-
-.subsections {
-    font-size: 1.5rem;
+    margin-bottom: 5px;
 }
 
 a {
@@ -65,3 +62,60 @@ a {
     font-weight: normal;
     font-style: normal;
 }
+
+.bona-nova-sc-regular {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 550;
+    font-style: normal
+}
+
+.playfair-display-bold {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.playfair-display-regular {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.username {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.contacts{
+    font-size: 20px;
+}
+
+.manuale {
+    font-family: "Manuale", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p{
+    font-size: 20px;
+    font-family: "Manuale", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+span{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.subEdu, .workExp, .subProject, .subposition, .acheivement{
+    margin-bottom: 8px;
+}
+
+@layer base {img {display: initial;}}
+

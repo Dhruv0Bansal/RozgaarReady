@@ -22,4 +22,8 @@ router.get('/temp-1', (req, res)=>{
     res.sendFile(path.join(__dirname,'../templates/resumeT1.html'))
 })
 
+router.get('/temp-2', (req, res)=>{
+    res.sendFile(path.join(__dirname,'../templates/resumeMNIT.html'))
+})
+
 module.exports = router

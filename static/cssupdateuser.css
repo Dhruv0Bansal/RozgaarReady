@@ -1,74 +1,218 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* General Reset */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
     padding: 20px;
 }
 
-h1 {
+h1, h2 {
+    color: #2c3e50;
     text-align: center;
-    color: #333;
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 
 h2 {
-    color: #444;
-    border-bottom: 2px solid #007BFF; /* Blue underline for section headers */
+    background-color: #1081cd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border: 2px solid #0e0570;
     padding-bottom: 10px;
+    color: whitesmoke;
 }
 
 form {
-    background: white; /* White background for the form */
-    padding: 20px; /* Padding around the form content */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 label {
-    display: block; /* Labels on their own line */
-    margin: 10px 0 5px; /* Spacing around labels */
-    font-weight: bold; /* Bold text for labels */
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: 500;
+    color: #555;
 }
 
-input[type="text"], input[type="email"], input[type="url"] {
-    width: 100%; /* Full width inputs */
-    padding: 10px; /* Padding inside inputs */
-    margin-bottom: 15px; /* Space below inputs */
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 4px; /* Rounded corners for inputs */
+input[type="text"],
+input[type="email"],
+input[type="url"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+    outline: none;
 }
 
 button {
-    background-color: #007BFF; /* Blue background for buttons */
-    color: white; /* White text for buttons */
-    border: none; /* No border */
-    padding: 10px 15px; /* Padding inside buttons */
-    border-radius: 4px; /* Rounded corners for buttons */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Font size for buttons */
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #2980b9;
+    transform: translateY(-2px);
 }
 
-.education, .work-experience, .personal-project, .responsibility-section, .acheivements {
-    margin-bottom: 20px; /* Space below each section */
-    padding: 15px; /* Padding inside sections */
-    border: 1px solid #ddd; /* Light gray border around sections */
-    border-radius: 5px; /* Rounded corners for sections */
-    background-color: #f9f9f9; /* Light gray background for sections */
+button:active {
+    transform: translateY(0);
 }
 
 .delete-button {
-    background-color: red; /* Red background for delete buttons */
-    color: white; /* White text for delete buttons */
-    border: none; /* No border for delete buttons */
-    padding: 5px 10px; /* Padding inside delete buttons */
-    border-radius: 4px; /* Rounded corners for delete buttons */
-    cursor: pointer; /* Pointer cursor on hover for delete buttons */
+    background-color: #e74c3c;
+    margin-top: 10px;
 }
 
 .delete-button:hover {
-    background-color: darkred; /* Darker red on hover for delete buttons */
+    background-color: #c0392b;
+}
+
+.add-education,
+.add-work-experience,
+.add-project,
+.add-responsibility,
+.add-achievement {
+    background-color: #2ecc71;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.add-education:hover,
+.add-work-experience:hover,
+.add-project:hover,
+.add-responsibility:hover,
+.add-achievement:hover {
+    background-color: #27ae60;
+}
+
+.main-deatils,
+.education,
+.work-experience,
+.personal-project,
+.tech-skills,
+.responsibility-section,
+.acheivements {
+    margin-bottom: 30px;
+}
+
+.edu,
+.work,
+.project,
+.responsibility,
+.achievement {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    transition: box-shadow 0.3s ease;
+}
+
+.edu:hover,
+.work:hover,
+.project:hover,
+.responsibility:hover,
+.achievement:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"] {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Animation for adding new sections */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for deleting sections */
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Apply animation to new sections */
+.edu,
+.work,
+.project,
+.responsibility,
+.achievement {
+    animation: slideDown 1s ease-out;
+}
+
+/* Apply animation to deleted sections */
+.deleting {
+    animation: slideUp 0.3s ease-out;
+    overflow: hidden;
 }

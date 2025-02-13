@@ -32,37 +32,7 @@ form.addEventListener('submit', async (event) => {
     }
 })
 
-// Dynamic Background
-function createFloatingCircle() {
-    const circle = document.createElement("div");
-    circle.className = "floating-circle";
 
-    const size = Math.random() * 200 + 50;
-    circle.style.width = `${size}px`;
-    circle.style.height = `${size}px`;
-
-    circle.style.left = `${Math.random() * 100}%`;
-    circle.style.top = `${Math.random() * 100}%`;
-
-    circle.style.animationDuration = `${Math.random() * 20 + 10}s`;
-    circle.style.animationDelay = `${Math.random() * 20}s`;
-
-    document.body.appendChild(circle);
-
-    // Remove circles after animation
-    setTimeout(() => circle.remove(), 30000);
-}
-
-
-// Generate initial circles
-for (let i = 0; i < 8; i++) {
-    createFloatingCircle();
-}
-
-// Generate new circles periodically
-setInterval(createFloatingCircle, 5000);
-
-// Form Validation
 const inputs = document.querySelectorAll("input");
 
 inputs.forEach((input) => {
@@ -90,11 +60,10 @@ form.addEventListener("submit", (e) => {
     }, 2000);
 });
 
-//Cursor Trail Animation
+// Cursor Trail Animation
 const cursorTrails = document.querySelectorAll(".cursor-trail");
 let mouseX = 0,
     mouseY = 0;
-let trailIndex = 0;
 
 document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
@@ -112,7 +81,6 @@ function updateCursorTrails() {
     requestAnimationFrame(updateCursorTrails);
 }
 
-
 // Click Glow Effect
 document.addEventListener("click", () => {
     cursorTrails.forEach((trail) => {
@@ -123,19 +91,21 @@ document.addEventListener("click", () => {
 
 // Logo Hover Interaction
 const logo = document.querySelector(".brand-logo");
-logo.addEventListener("mouseenter", () => {
-    cursorTrails.forEach((trail) => {
-        trail.style.transform = "scale(1.5)";
-        trail.style.background = "linear-gradient(45deg, #ffa700, #ff6b35)";
+if (logo) {
+    logo.addEventListener("mouseenter", () => {
+        cursorTrails.forEach((trail) => {
+            trail.style.transform = "scale(1.5)";
+            trail.style.background = "linear-gradient(45deg, #ffa700, #ff6b35)";
+        });
     });
-});
 
-logo.addEventListener("mouseleave", () => {
-    cursorTrails.forEach((trail) => {
-        trail.style.transform = "scale(1)";
-        trail.style.background = "linear-gradient(45deg, #ff6b35, #ffa700)";
+    logo.addEventListener("mouseleave", () => {
+        cursorTrails.forEach((trail) => {
+            trail.style.transform = "scale(1)";
+            trail.style.background = "linear-gradient(45deg, #ff6b35, #ffa700)";
+        });
     });
-});
+}
 
 // Start animations
 updateCursorTrails();
@@ -144,13 +114,15 @@ updateCursorTrails();
 const togglePassword = document.getElementById("togglePassword");
 const passwordInput = document.getElementById("password");
 
-togglePassword.addEventListener("click", () => {
-    const type = passwordInput.getAttribute("type");
-    if (type === "password") {
-        passwordInput.setAttribute("type", "text");
-        togglePassword.textContent = "Hide";
-    } else {
-        passwordInput.setAttribute("type", "password");
-        togglePassword.textContent = "Show";
-    }
-});
+if (togglePassword && passwordInput) {
+    togglePassword.addEventListener("click", () => {
+        const type = passwordInput.getAttribute("type");
+        if (type === "password") {
+            passwordInput.setAttribute("type", "text");
+            togglePassword.textContent = "Hide";
+        } else {
+            passwordInput.setAttribute("type", "password");
+            togglePassword.textContent = "Show";
+        }
+    });
+}

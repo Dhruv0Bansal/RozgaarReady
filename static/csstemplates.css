@@ -1,0 +1,153 @@
+/* Resets (Normalize.css would be ideal in a real project) */
+body,
+h1,
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* Basic body styling for readability */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* A clean, modern font */
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    /* Light, neutral background */
+    color: #333;
+    /* Dark, readable text */
+    display: flex;
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+    min-height: 100vh;
+    /* Ensure full viewport height */
+    padding: 20px;
+    /* Add some padding around the content */
+    box-sizing: border-box;
+    /* Include padding in width/height calculations */
+}
+
+/* Container for the links */
+.container {
+    text-align: center;
+    /* Center the links */
+}
+
+/* Style for the heading */
+h1 {
+    font-size: 2.5em;
+    /* Large and prominent */
+    font-weight: 600;
+    /* Semi-bold */
+    margin-bottom: 20px;
+    /* Space below the heading */
+    color: #2c3e50;
+    /* A professional dark blue */
+}
+
+/* Style for the links (A4 paper effect) */
+a.a4-link {
+    display: block;
+    /* Make the link a block-level element */
+    width: 210px;
+    /* A4 paper width in mm */
+    height: 297px;
+    /* A4 paper height in mm */
+    margin: 20px;
+    background-image: url('https://th.bing.com/th/id/OIP.FzVSe7dLK0ffSPHmN-6iQAHaIS?rs=1&pid=ImgDetMain');
+    /* Replace with your paper texture */
+    background-size: cover;
+    /* Cover the entire area */
+    background-repeat: no-repeat;
+    /* Prevent tiling */
+    text-indent: -9999px;
+    /* Hide the link text */
+    overflow: hidden;
+    /* Hide overflowing text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
+    border-radius: 8px;
+    /* Optional: Add rounded corners */
+    transition: transform 0.3s ease;
+    /* Smooth transition for hover */
+}
+
+/* Style for the links */
+a {
+    display: inline-block;
+    /* Allows setting width/height and margin */
+    padding: 12px 24px;
+    /* Comfortable padding */
+    margin: 10px;
+    /* Spacing between links */
+    text-decoration: none;
+    /* Remove underlines */
+    background-color: #3498db;
+    /* A modern blue color */
+    color: #fff;
+    /* White text for contrast */
+    border-radius: 5px;
+    /* Slightly rounded corners */
+    font-weight: 500;
+    /* Medium font weight */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for hover effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for depth */
+}
+
+/* Hover effect for the A4 links */
+a.a4-link:hover {
+    transform: scale(1.05);
+    /* Slightly scale up on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Slightly larger shadow on hover */
+}
+
+/* Hover effect for the links */
+a:hover {
+    background-color: #2980b9;
+    /* Darker blue on hover */
+}
+
+/* Accessibility considerations */
+a:focus {
+    outline: 2px solid #2980b9;
+    /* Add an outline on focus for keyboard navigation */
+    outline-offset: 2px;
+    /* Offset the outline for better visibility */
+}
+
+/* Responsiveness (adjustments for smaller screens) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        /* Reduce padding on small screens */
+    }
+
+    a {
+        display: block;
+        /* Stack links on top of each other */
+        width: 100%;
+        /* Full width links */
+        margin: 10px 0;
+        /* Adjust margin for stacked links */
+        box-sizing: border-box;
+        /* Include padding in width calculation */
+    }
+}
+
+/* Apply different background images to each A4 link */
+a.a4-link:nth-of-type(1) {
+    background-image: url('https://th.bing.com/th/id/OIP.FzVSe7dLK0ffSPHmN-6iQAHaIS?rs=1&pid=ImgDetMain'); /* Image for Template 1 */
+}
+
+a.a4-link:nth-of-type(2) {
+    background-image: url('https://example.com/image2.jpg'); /* Image for MNIT Template */
+}
+

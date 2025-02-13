@@ -4,12 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rozgaar Ready</title>
+    <link rel="stylesheet" href="/csshome.css"> <!-- Link to CSS file -->
 </head>
 <body>
-    <a href="/rozgaarready/update-user">update-user</a>
-    <a href="/rozgaarready/resume-templates">RESUME TEMPLATES</a>
-    <a href=""></a>
-    <a href=""></a>
-    <a href=""></a>
+    <!-- Logo at the top-center -->
+    <div class="logo-container">
+        <img src="/images/logo.png" alt="Rozgaar Ready Logo" class="logo">
+    </div>
+
+    <!-- Buttons on the right side -->
+    <div class="buttons-container">
+        <button class="nav-button" data-dialog="update-user-dialog">Update User</button>
+        <button class="nav-button" data-dialog="resume-templates-dialog">Resume Templates</button>
+        <button class="nav-button" data-dialog="job-recommendation-dialog">Job Recommendation</button>
+        <button class="nav-button" data-dialog="video-tutorials-dialog">Video Tutorials</button>
+    </div>
+
+    <!-- Dialog boxes on the left side -->
+    <div class="dialogs-container">
+        <div id="update-user-dialog" class="dialog">
+            <h2>Update User</h2>
+            <p>This is the content for updating user information.</p>
+        </div>
+        <div id="resume-templates-dialog" class="dialog">
+            <h2>Resume Templates</h2>
+            <p>Choose from a variety of resume templates.</p>
+        </div>
+        <div id="job-recommendation-dialog" class="dialog">
+            <h2>Job Recommendation</h2>
+            <p>Get personalized job recommendations.</p>
+        </div>
+        <div id="video-tutorials-dialog" class="dialog">
+            <h2>Video Tutorials</h2>
+            <p>Watch tutorials to enhance your skills.</p>
+        </div>
+    </div>
+
+    <!-- Audio for hover effect -->
+    <audio id="hover-sound" src="/audio/hover-sound.mp3"></audio>
+
+    <script src="/jshome.js"></script> <!-- Link to JavaScript file -->
 </body>
 </html>

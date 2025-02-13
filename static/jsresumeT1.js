@@ -2,29 +2,40 @@ async function getData(username) {
     let response = await fetch(`/populate/${username}`);
     let data = await response.json()
     document.querySelector('.username').innerText = data.mainDetails.username;
-    document.querySelector('.contact').innerText = `${data.mainDetails.contact}`;
-    document.querySelector('.offEmail').innerHTML = `<i class='bx bx-envelope' ></i>${data.mainDetails.offEmail}`;
+    document.querySelector('.contact').innerHTML = `<i class='bx bxs-phone'></i>${data.mainDetails.contact}`;
+    document.querySelector('.offEmail').innerHTML = `<i class='bx bxs-envelope'></i>${data.mainDetails.offEmail}`;
     document.querySelector('.linkedin').href = data.mainDetails.linkedin;
     document.querySelector('.github').href = data.mainDetails.github;
+    const idElement = document.querySelector('.id');
+    if (idElement) idElement.innerText = data.mainDetails.id;
+    
+    const courseElement = document.querySelector('.course');
+    if (courseElement) courseElement.innerText = data.mainDetails.course;
+    
+    const branchElement = document.querySelector('.branch');
+    if (branchElement) branchElement.innerText = data.mainDetails.branch;
+
+    const emailElement = document.querySelector('.email');
+    if (emailElement) emailElement.innerHTML = `<i class='bx bxs-envelope'></i>${data.email}`;
 
     //Inserting Education details
-    if(data.education.length == 0){
+    if (data.education.length == 0) {
         let data = document.querySelectorAll('.edu-head');
-        data.forEach(data=>{
+        data.forEach(data => {
             data.style.display = "none";
         })
-    }else{
-        data.education.forEach(edu=>{
+    } else {
+        data.education.forEach(edu => {
             let d = document.createElement('div')
             d.classList.add('subEdu')
             d.innerHTML = `
                 <div class="flex">
-                    <h3>${edu.school}</h6>
-                    <p>${edu.board}</p>
+                    <h3 class="playfair-display-bold">• ${edu.school}</h6>
+                    <p class="p-class">${edu.passYear}</p>
                 </div>
                 <div class="flex">
-                    <p>${edu.passYear}</p>
-                    <p>CGPA : ${edu.grade}</p>
+                    <p class="p-class">&nbsp &nbsp${edu.board}</p>
+                    <p class="p-class"><b>CGPA/Percentage</b> : ${edu.grade}</p>
                 </div>
             `
             document.querySelector('.education').append(d)
@@ -32,44 +43,45 @@ async function getData(username) {
     }
 
     //Inserting Work Experience
-    if(data.workExperience.length == 0){
+    if (data.workExperience.length == 0) {
         let data = document.querySelectorAll('.work-head');
-        data.forEach(data=>{
+        data.forEach(data => {
             data.style.display = "none";
         })
-    }else{
-        data.workExperience.forEach(edu=>{
+    } else {
+        data.workExperience.forEach(work => {
             let d = document.createElement('div')
-            d.classList.add('subEdu')
+            d.classList.add('workExp')
             d.innerHTML = `
-                <div class="flex">
-                    <h3>${edu.school}</h6>
-                    <p>${edu.board}</p>
-                </div>
-                <div class="flex">
-                    <p>${edu.passYear}</p>
-                    <p>CGPA : ${edu.grade}</p>
-                </div>
+            <div class="flex">
+                <h3 class="playfair-display-bold">• ${work.company}</h3>
+                <p class="p-class">${work.year}</p>
+            </div>
+            <div class="flex-align-items">
+                <p class="manuale p-class">&nbsp &nbsp${work.role}</p>
+                <p class="p-class">${work.city}</p>
+            </div>
             `
-            document.querySelector('.education').append(d)
+            document.querySelector('.workExperience').append(d)
         })
     }
 
     //Inserting Project Details!!
-    if(data.personalProjects.length == 0){
+    if (data.personalProjects.length == 0) {
         let d = document.querySelectorAll('.project-head');
-        d.forEach(d=>{
+        d.forEach(d => {
             d.style.display = "none";
         })
-    }else{
-        data.personalProjects.forEach(project=>{
+    } else {
+        data.personalProjects.forEach(project => {
             let d = document.createElement('div')
             d.classList.add('subProject')
             d.innerHTML = `
-                <h3>${project.projectName}</h3>
-                <p>${project.role}</p>
-                <p>${project.techStack}</p>
-                <p>${project.description}</p>
+                <div class="d-flex">
+                    <span class="playfair-display-bold flex">• ${project.projectName} | </span>  <span class="flex playfair-display-regular"> &nbsp${project.techStack}</span>
+                </div>
+                <p class="p-class">&nbsp &nbsp<b>Role : </b>${project.role}</p>
+                <p class="p-class">&nbsp &nbsp${project.description}</p>
             `
             document.querySelector('.projects').append(d)
         })
@@ -85,38 +97,38 @@ async function getData(username) {
     }
 
     //Inserting Postion of Responsibility
-    if(data.responsibility.length == 0){
+    if (data.responsibility.length == 0) {
         let d = document.querySelectorAll('.position-head');
-        d.forEach(d=>{
+        d.forEach(d => {
             d.style.display = "none";
         })
-    }else{
-        data.responsibility.forEach(position=>{
+    } else {
+        data.responsibility.forEach(position => {
             let d = document.createElement('div')
             d.classList.add('subposition')
             d.classList.add('flex')
             d.innerHTML = `
-                <p>${position.position}</p>
-                <p>${position.tenure}</p>
+                <p class="p-class playfair-display-bold">• <b>${position.position}</b></p>
+                <p class = "p-class">${position.tenure}</p>
             `
             document.querySelector('.extra-curricular').append(d)
         })
     }
 
     //Inserting Acheivements
-    if(data.achievements.length == 0){
+    if (data.achievements.length == 0) {
         let d = document.querySelectorAll('.acheivement-head');
-        d.forEach(d=>{
+        d.forEach(d => {
             d.style.display = "none";
         })
-    }else{
-        data.achievements.forEach(acheivement=>{
+    } else {
+        data.achievements.forEach(acheivement => {
             let d = document.createElement('div')
             d.classList.add('acheivement')
             d.classList.add('flex')
             d.innerHTML = `
-                <p>${acheivement.description}</p>
-                <p>${acheivement.eventDates}</p>
+                <p class="p-class playfair-display-bold">• <b>${acheivement.description}</b></p>
+                <p class = "p-class">${acheivement.eventDates}</p>
             `
             document.querySelector('.achievements').append(d)
         })
@@ -125,83 +137,14 @@ async function getData(username) {
 
 getData(sessionStorage.username);
 
-// Entering Initail Details
-
-
-// {
-//     "mainDetails": {
-//       "username": "Pritam Barman",
-//       "id": "2023UCP1608",
-//       "institute": "MNIT Jaipur",
-//       "course": "BTECH",
-//       "branch": "CSE",
-//       "cgpa": "8.59",
-//       "currYear": "2025",
-//       "contact": "8812032614",
-//       "offEmail": "2023ucp1608@mnit.ac.in",
-//       "github": "http://localhost:3000/rozgaarready/update-user",
-//       "linkedin": "http://localhost:3000/rozgaarready/update-user"
-//     },
-//     "techSkills": {
-//       "languages": "C++, Python",
-//       "devTools": "git, github",
-//       "frameworks": "Node.js, Numpy",
-//       "cloudDb": "MongoDB",
-//       "softskills": "communication Skill",
-//       "coursework": "OPPS, ML",
-//       "interestArea": "Image Processing"
-//     },
-//     "_id": "679cd58a8f4c2e1f8ecc614f",
-//     "username": "pritamzzz",
-//     "education": [
-//       {
-//         "school": "MNIT",
-//         "board": "CENTRAL",
-//         "grade": "8.59",
-//         "passYear": "2027",
-//         "_id": "679ce75b359f8712457db6c8"
-//       },
-//       {
-//         "school": "KVS Maligaon",
-//         "board": "CBSE",
-//         "grade": "9.2",
-//         "passYear": "2023",
-//         "_id": "679ce75b359f8712457db6c9"
-//       }
-//     ],
-//     "workExperience": [],
-//     "personalProjects": [
-//       {
-//         "projectName": "Rozgaar Ready",
-//         "techStack": "HTML, CSS, Javascript, Node.js, Express.js",
-//         "role": "Backend Developer",
-//         "description": "this project is awesome",
-//         "_id": "679ce75b359f8712457db6ca"
-//       }
-//     ],
-//     "responsibility": [
-//       {
-//         "position": "hello",
-//         "tenure": "hellooo",
-//         "_id": "679ce75b359f8712457db6cb"
-//       },
-//       {
-//         "position": "wfoubfowc j",
-//         "tenure": "cwlbow ",
-//         "_id": "679ce75b359f8712457db6cc"
-//       }
-//     ],
-//     "achievements": [
-//       {
-//         "description": "ouhwbv0wb",
-//         "eventDates": "wovubwb",
-//         "_id": "679ce75b359f8712457db6cd"
-//       },
-//       {
-//         "description": "iug9ch 9c",
-//         "eventDates": "oubowefcb",
-//         "_id": "679ce75b359f8712457db6ce"
-//       }
-//     ],
-//     "__v": 0
-//   }
+document.getElementById('generatePdf').addEventListener('click', async () => {
+    let content = document.getElementById('contain')
+    console.log(content)
+    const response = await fetch('/generate-pdf', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ html: content.innerHTML })
+    });
+    let reply = await response.json();
+    console.log(reply)
+});

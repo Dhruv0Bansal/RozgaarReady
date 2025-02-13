@@ -1,66 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/csslogin.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/csslogin.css">
 </head>
+
 <body>
 
-<div class="loading-overlay">
-      <div class="spinner"></div>
-    </div>
+  <div class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
 
-    <!-- Cursor Trail Elements -->
-    <div class="cursor-trail"></div>
-    <div class="cursor-trail"></div>
-    <div class="cursor-trail"></div>
+  <!-- Cursor Trail Elements -->
+  <div class="cursor-trail"></div>
+  <div class="cursor-trail"></div>
+  <div class="cursor-trail"></div>
 
-    <!-- Background Circles -->
-    <div class="floating-circle"></div>
-    <div class="floating-circle"></div>
-    <div class="floating-circle"></div>
+  <!-- Brand Logo -->
+  <img src="/images/logo.png" alt="Your Brand Logo" class="brand-logo" height="250px"/>
 
-    <!-- Brand Logo -->
-    <img
-      src="/images/logo.png"
-      alt="Your Brand Logo"
-      class="brand-logo"
-    />
+  <div class="login-container">
+    <h1>Welcome Back!</h1>
+    <form id="loginForm" action="/log" method="post">
+      <div class="input-group">
+        <input type="text" id="username" name="username" autocomplete="username" required />
+        <label for="username">Username</label>
+      </div>
+      <div class="input-group" style="position: relative">
+        <input type="password" id="password" name="password" autocomplete="current-password" required />
+        <label for="password">Password</label>
+        <!-- Toggle Password Button -->
+        <button type="button" class="toggle-password" id="togglePassword">
+          Show
+        </button>
+      </div>
 
-    <div class="login-container">
-      <h1>Welcome Back!</h1>
-      <form id="loginForm" action="/log" method="post">
-        <div class="input-group">
-          <input
-            type="text"
-            id="username"
-            name="username"
-            autocomplete="username"
-            required
-          />
-          <label for="username">Username</label>
-        </div>
-        <div class="input-group" style="position: relative">
-          <input
-            type="password"
-            id="password"
-            name="password"
-            autocomplete="current-password"
-            required
-          />
-          <label for="password">Password</label>
-          <!-- Toggle Password Button -->
-          <button type="button" class="toggle-password" id="togglePassword">
-            Show
-          </button>
-        </div>
-
-        <button type="submit">Sign In</button>
-        <a href="/forget-password" class="forgot-password">Forgot Password?</a>
-      </form>
-    </div>
-    <script src="/jslogin.js"></script>
+      
+      <button type="submit">Sign In</button>
+      <a href="/forget-password" class="forgot-password">Forgot Password?</a>
+    </form>
+  </div>
+  <script src="/jslogin.js"></script>
 </body>
 </html>

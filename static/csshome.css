@@ -1,0 +1,126 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #8198ca, #2a5298); /* Gradient background */
+    color: white;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Logo Container */
+.logo-container {
+    position: absolute;
+    top: 70px; /* Adjusted to top-center */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.logo {
+    height: 100px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); /* Subtle shadow */
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Bulge out effect */
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)); /* Enhanced shadow on hover */
+}
+
+/* Buttons Container */
+.buttons-container {
+    /* position: absolute;
+    top: 30%;
+    right: 27.5%; */
+    /* top:30%; */
+    display: flex;
+    justify-content:center;
+    gap: 20px; /* Reduced gap between buttons */
+}
+
+.nav-button {
+    padding: 15px 30px; /* Larger buttons */
+    background-color: transparent;
+    color: white;
+    border: 2px solid #00ffcc;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px; /* Larger font size */
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 200px; /* Fixed width for consistency */
+    text-align: center;
+}
+
+.nav-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(0, 255, 204, 0.3), transparent);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.nav-button:hover {
+    background-color: #00ffcc;
+    color: #1e3c72;
+    box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc; /* Neon glow effect */
+}
+
+.nav-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Dialogs Container */
+.dialogs-container {
+    position: absolute;
+    top: 600px;
+    left: 38.5%; 
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: none; /* Hidden by default */
+    justify-content:center;
+    animation: fadeIn 0.3s ease; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.dialog {
+    display: none; /* Hidden by default */
+    color: #1e3c72;
+    text-align:center;
+}
+
+.dialog h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #1e3c72;
+    text-align: center;
+}
+
+.dialog p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align:center;
+}
