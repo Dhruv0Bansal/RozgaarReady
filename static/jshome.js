@@ -1,3 +1,7 @@
+if(sessionStorage.username == null){
+    window.location.href = '/login'
+}
+
 // Get all buttons and dialogs
 const buttons = document.querySelectorAll('.nav-button');
 const dialogs = document.querySelectorAll('.dialog');
@@ -56,12 +60,6 @@ buttons.forEach(button => {
                 break;
             case 'resume-templates-dialog':
                 endpoint = '/rozgaarready/resume-templates';
-                break;
-            case 'job-recommendation-dialog':
-                endpoint = '/recomendation';
-                break;
-            case 'video-tutorials-dialog':
-                endpoint = '/tutorials';
                 break;
             default:
                 console.error('Unknown button clicked');

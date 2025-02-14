@@ -1,4 +1,9 @@
+if(sessionStorage.username == null){
+    window.location.href = '/login'
+}
+
 async function getData(username) {
+    if(username == null) return
     let response = await fetch(`/populate/${username}`);
     let data = await response.json()
     document.querySelector('.username').innerText = data.mainDetails.username;

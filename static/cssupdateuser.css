@@ -216,3 +216,36 @@ button:active {
     animation: slideUp 0.3s ease-out;
     overflow: hidden;
 }
+
+/* Initially hide all sections */
+.main-deatils,
+.education,
+.work-experience,
+.personal-project,
+.tech-skills,
+.responsibility-section,
+.acheivements,
+.add-education,
+.add-project,
+.add-work-experience,
+.add-responsibility,
+.add-achievement {
+    display: none;
+}
+
+
+/* Style for the h2 headers to make them look clickable */
+h2 {
+    cursor: pointer;
+    background-color: #41a5be;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+h2:hover {
+    transition: 0.3s;
+    background-color: #00ffdd;
+    color: #0e0570;
+}

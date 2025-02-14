@@ -144,10 +144,10 @@ a:focus {
 
 /* Apply different background images to each A4 link */
 a.a4-link:nth-of-type(1) {
-    background-image: url('https://th.bing.com/th/id/OIP.FzVSe7dLK0ffSPHmN-6iQAHaIS?rs=1&pid=ImgDetMain'); /* Image for Template 1 */
+    background-image: url('/images/t1.png'); /* Image for Template 1 */
 }
 
 a.a4-link:nth-of-type(2) {
-    background-image: url('https://example.com/image2.jpg'); /* Image for MNIT Template */
+    background-image: url('/images/mnit.png'); /* Image for MNIT Template */
 }
 

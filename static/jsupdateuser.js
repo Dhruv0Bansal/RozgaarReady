@@ -1,3 +1,6 @@
+if(sessionStorage.username == null){
+    window.location.href = '/login'
+}
 // Function to add new education section
 document.getElementById('add-education').addEventListener('click', function(event) {
     event.preventDefault();
@@ -341,9 +344,48 @@ function populateForm(data) {
 }
 
 async function enterData(){
+    if(sessionStorage.username == null){
+        return
+    }
     let response = await fetch(`/populate/${sessionStorage.username}`)
     let reply = await response.json();
     populateForm(reply)
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Get all h2 elements
+    const headers = document.querySelectorAll("h2");
+
+    headers.forEach(header => {
+        // Add a click event listener to each h2
+        header.addEventListener("click", function () {
+            // Get the next sibling element (the section to toggle)
+            const section = header.nextElementSibling;
+
+            // Get the "Add" button associated with this section
+            let addButton = null;
+            if (section.classList.contains("education")) {
+                addButton = document.getElementById("add-education");
+            } else if (section.classList.contains("work-experience")) {
+                addButton = document.getElementById("add-work-experience");
+            } else if (section.classList.contains("personal-project")) {
+                addButton = document.querySelector(".add-project");
+            } else if (section.classList.contains("responsibility-section")) {
+                addButton = document.querySelector(".add-responsibility");
+            } else if (section.classList.contains("acheivements")) {
+                addButton = document.querySelector(".add-achievement");
+            }
+
+            // Toggle the visibility of the section and the "Add" button
+            if (section.style.display === "none" || section.style.display === "") {
+                section.style.display = "block"; // Show the section
+                if (addButton) addButton.style.display = "inline-block"; // Show the "Add" button
+            } else {
+                section.style.display = "none"; // Hide the section
+                if (addButton) addButton.style.display = "none"; // Hide the "Add" button
+            }
+        });
+    });
+});
 
 enterData()
